@@ -7,3 +7,65 @@ td{
     width: 50px;
     background-color: white;
 }
+
+button{
+    background-color: #3498db; /* Light blue */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+button:hover{
+    background-color: #2980b9;
+}
+
+body{
+    background-color: #a8dadc;
+}
+
+.row{
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.column{
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.color{
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#selectedColorId {
+    font-size: 16px; /* Make the font size bigger */
+    padding: 10px; /* Add padding to increase the size */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#selectedColorId option {
+    font-size: 16px; /* Make the font size bigger */
+}
+
+.container {
+    width: 300px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Center the content inside the container */
+}
+
+#grid{
+    justify-content: center;
+}
