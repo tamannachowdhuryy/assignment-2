@@ -10,7 +10,24 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+        //Base case; return if there are no rows
+        if (numRows === 0) {
+            addR();
+            return;
+        }
+    
+        //Grab the HTML element
+        let allRows = document.getElementById("grid").querySelectorAll("tr");
+    
+        //Iterate through rows and add columns
+        for (let i = 0; i < numRows; i++) {
+            let col = document.createElement("td");
+            col.onclick = function () { this.style.backgroundColor = colorSelected; };
+            allRows[i].appendChild(col);
+        }
+    
+        //Increment column global variable
+        numCols++;
 }
 
 // Remove a row
