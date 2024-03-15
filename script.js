@@ -15,12 +15,27 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    var grid = document.getElementById("grid"); // Get the grid table element
+    //Delete a cell(s) going up
+    if (grid.rows.length > 1) {
+        grid.deleteRow(grid.rows.length - 1);
+        numRows--;  // Modified this, numRows was previously not being decremented when removeR() was called.
+    }
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    var grid = document.getElementById("grid"); // Get the grid table element
+    // Delete a cell(s) going left
+    for (var i = 0; i < grid.rows.length; i++) {
+        var lastCellIndex = grid.rows[i].cells.length - 1;
+
+        if (lastCellIndex >= 0) {
+            grid.rows[i].deleteCell(lastCellIndex);
+        }
+    }
+    
+    numCols--; // Modified this, numCols was previously not being decremented when removeC() was called.
 }
 
 // Set global variable for selected color
