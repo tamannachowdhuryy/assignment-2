@@ -1,5 +1,5 @@
 # grid-maker-starter-code
-This repository is the starter code for Assignment 3 - Grid Maker.
+This repository is the starter code for Assignment 3 - Grid Maker. Team members: Sumayia Rashid, Tamanna Chowdhury ( tamannachowdhuryy), and Zeeshan Ahmed Gondal (ZeeshanAG)
 
 ### Live Link
 [Website link](https://johnnylaicode.github.io/grid-maker-starter-code/)
