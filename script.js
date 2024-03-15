@@ -18,9 +18,13 @@ function removeR() {
     alert("Clicked Remove Row"); // Replace this line with your code.
 }
 
-// Remove a column
-function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+function removeR() {
+    var grid = document.getElementById("grid"); // Get the grid table element
+    //Delete a cell(s) going up
+    if (grid.rows.length > 1) { //check the length of the row 
+        grid.deleteRow(grid.rows.length - 1);
+        numRows--;  // Modified this, numRows was previously not being decremented when removeR() was called.
+    }
 }
 
 // Set global variable for selected color
