@@ -131,11 +131,22 @@ function fillU() {
     }
 }
 
-// Fill all cells
-function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
-}
+/**
+ * This function updates the color for all of the cells in the grid, depending on global var colorSelected.
+ * @note Nested loop, time complexity O(n^2), iterates through row & column to update each cell to the specified color.
+ * @author Zeeshan Ahmed Gondal
+**/
+function fillAll() {
+    var grid = document.getElementById("grid"); 
 
+    for (let i = 0; i < grid.rows.length; i++) {
+        for (let j = 0; j < grid.rows[i].cells.length; j++) {
+            var cell = grid.rows[i].cells[j];
+
+            cell.style.backgroundColor = colorSelected; // Set the cell's color
+        }
+    }
+}
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
