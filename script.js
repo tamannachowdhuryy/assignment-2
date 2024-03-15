@@ -5,7 +5,31 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    //Grab the grid HTML element
+    let grid = document.getElementById("grid");
+
+    //Create a new row 
+    let row = document.createElement("tr");
+
+    //Add the row element to the grid element
+    grid.appendChild(row);
+    
+    //Base case; return if there are no columns
+    if (numCols == 0){
+        numCols++;
+    } 
+    //Iterate through columns and add rows Add appropriate columns
+    for (let i = 0; i < numCols; i++) {
+        let col = document.createElement("td");
+        col.onclick = function () { this.style.backgroundColor = colorSelected; };
+        row.appendChild(col);
+    }
+
+    //Add created row
+    grid.appendChild(row);
+
+    //Update and increment row global variable
+    numRows++;
 }
 
 // Add a column
@@ -26,7 +50,7 @@ function addC() {
             allRows[i].appendChild(col);
         }
     
-        //Increment column global variable
+        //Update and increment column global variable
         numCols++;
 }
 
