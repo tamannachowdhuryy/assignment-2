@@ -147,7 +147,19 @@ function fillAll() {
         }
     }
 }
-// Clear all cells
-function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+
+/**
+ * This function updates the color for all of the cells in the grid to the default value.
+ * @note Nested loop, time complexity O(n^2), iterates through row & column to update each cell to default values.
+ * @author Tamanna Chowdhury
+**/
+function clearAll() {
+    var grid = document.getElementById("grid"); // Get the grid table element
+    // for every row and column
+    for (let row of grid.rows) {
+        for (let cell of row.cells) {
+            // clear the cell color
+            cell.style.backgroundColor = "";
+        }
+    }
 }
