@@ -15,7 +15,7 @@ function addC() {
 
 // Remove a row
 function removeR() {
-   
+   var grid = document.getElementById("grid"); // Get the grid table element
 }
 
 // Remove a column
