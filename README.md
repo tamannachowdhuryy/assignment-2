@@ -2,7 +2,7 @@
 This repository is the starter code for Assignment 2 - Grid Maker. Team members: Sumayia Rashid, Tamanna Chowdhury ( tamannachowdhuryy), and Zeeshan Ahmed Gondal (ZeeshanAG)
 
 ### Live Link
-[Website link](https://johnnylaicode.github.io/grid-maker-starter-code/)
+[Website link](https://tamannachowdhuryy.github.io/assignment-2/)
 
 ----------
 ### 1. Use the following process to ***import*** the Assignment 2 starter code repository to your GitHub account as the starter codebase
