@@ -1,9 +1,21 @@
-// Declare global variables
+/**
+Author(s): Sumayia Rashid, Tamanna Chowdhury, Zeeshan Ahmed Gondal
+Course: CSCI-39548 Johnny Lai
+Assignment: #2
+
+* This file contains functions that allows you to create, and modify a 2 dimensional grid.
+*/
+
+// Declaration of global variables
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
-// Add a row
+/**
+ * This function adds a new row to the grid.
+ * @note Time complexity is O(n), where n is the number of columns. The complexity is due to iterating through each column to append cells to the new row. If there are no columns, it adjusts the count to reflect the addition of a new column.
+ * @author Sumayia Rashid
+**/
 function addR() {
     //Grab the grid HTML element
     let grid = document.getElementById("grid");
@@ -32,7 +44,11 @@ function addR() {
     numRows++;
 }
 
-// Add a column
+/**
+ * This function adds a new column to every existing row in the grid.
+ * @note Time complexity is O(n), where n is the number of rows. The complexity primarily comes from iterating through each row to append a new column.
+ * @author Sumayia Rashid
+**/
 function addC() {
         //Base case; return if there are no rows
         if (numRows === 0) {
@@ -54,7 +70,11 @@ function addC() {
         numCols++;
 }
 
-// Remove a row
+/**
+ * This function removes the last row that exists.
+ * @note Time complexity O(1), ignoring DOM manipulation. Not dependent on how many rows exist.
+ * @author Tamanna Chowdhury
+**/
 function removeR() {
     var grid = document.getElementById("grid"); // Get the grid table element
     //Delete a cell(s) going up
@@ -64,7 +84,11 @@ function removeR() {
     }
 }
 
-// Remove a column
+/**
+ * This function removes the last column that exists by removing the last cell that exists in each row.
+ * @note Time complexity O(n), dependent on how many rows exist.
+ * @author Tamanna Chowdhury
+**/
 function removeC() {
     var grid = document.getElementById("grid"); // Get the grid table element
     // Delete a cell(s) going left
@@ -79,22 +103,50 @@ function removeC() {
     numCols--; // Modified this, numCols was previously not being decremented when removeC() was called.
 }
 
-// Set global variable for selected color
+/**
+ * This is a mutator function, it modifies the global variable for the current color selected.
+ * @author Johnny Lai
+**/
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
     console.log(colorSelected);
 }
 
-// Fill all uncolored cells
-function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+/**
+ * This function fills all of the uncolored cells in the grid.
+ * @note Nested loop, time complexity O(n^2), iterates through row & column to check each cell. O(1) for conditional comparison.
+ * @author Zeeshan Ahmed Gondal
+**/
+function fillU() {
+    var grid = document.getElementById("grid"); 
+
+    for (let i = 0; i < grid.rows.length; i++) {
+        for (let j = 0; j < grid.rows[i].cells.length; j++) {
+            var cell = grid.rows[i].cells[j];
+
+            if (!cell.style.backgroundColor) {
+                cell.style.backgroundColor = colorSelected; // Set the cell's color
+            }
+        }
+    }
 }
 
-// Fill all cells
-function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
-}
+/**
+ * This function updates the color for all of the cells in the grid, depending on global var colorSelected.
+ * @note Nested loop, time complexity O(n^2), iterates through row & column to update each cell to the specified color.
+ * @author Zeeshan Ahmed Gondal
+**/
+function fillAll() {
+    var grid = document.getElementById("grid"); 
 
+    for (let i = 0; i < grid.rows.length; i++) {
+        for (let j = 0; j < grid.rows[i].cells.length; j++) {
+            var cell = grid.rows[i].cells[j];
+
+            cell.style.backgroundColor = colorSelected; // Set the cell's color
+        }
+    }
+}
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
